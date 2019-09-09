@@ -1,0 +1,95 @@
+.box-instagram
+    display: flex
+    justify-content: flex-start
+    align-items: stretch
+    margin: 80px 0
+    overflow: hidden
+
+    &__header
+        flex: 0 0 50%
+        display: flex
+        justify-content: center
+        align-items: center
+        background: #f6f6f6
+
+    &__content
+        padding: 30px 15px
+
+    &__icon
+        width: 19px
+        height: 19px
+        margin-bottom: 20px
+
+    &__title
+        font: italic 400 12px / 1.2 font-two
+        color: color2_bg
+
+    &__hash
+        font-size: 24px
+        font-weight: semibold
+        color: color1_bg
+
+    &__link
+        display: block
+        font-size: 6px
+        font-weight: medium
+        color: color1_bg
+
+    &__main
+        display: flex
+        flex: 1
+        min-width: 0
+        white-space: nowrap
+        overflow: hidden
+
+        a
+            display: block
+            flex: 0 0 100%
+
+        img
+            display: block
+            width: 100%
+            height: 100%
+            object-fit: cover
+            object-position: 50% 50%
+
+@media (min-width: 500px)
+    .box-instagram
+        &__header
+            flex: 0 0 33.333%
+
+        &__main
+            a
+                flex: 0 0 50%
+                padding-left: 10px
+
+@media (min-width: 768px)
+    .box-instagram
+        &__header
+            flex: 0 0 25%
+
+        &__main
+            a
+                flex: 0 0 33.333%
+
+@media (min-width: 993px)
+    .box-instagram
+        &__header
+            flex: 0 0 20%
+
+        &__icon
+            width: 31px
+            height: 31px
+
+        &__title
+            font-size: 22px
+
+        &__hash
+            font-size: 42px
+
+        &__link
+            font-size: 12px
+
+        &__main
+            a
+                flex: 0 0 25%

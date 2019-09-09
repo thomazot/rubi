@@ -883,7 +883,8 @@ function default_carrossel_produtos() {
                     itemScaleUp: true,
                     autoPlay: 3000,
                     stopOnHover: true,
-                    navigation: false,
+                    navigation: true,
+                    pagination: false,
                     beforeMove: function() {
                         if (typeof $j.fn.lazyload != 'undefined') {
                             $j(el)
@@ -897,14 +898,18 @@ function default_carrossel_produtos() {
 
                 $j(el).owlCarousel({
                     navigation: true,
-                    navigationText: ['?', '?'],
+                    navigationText: [
+                        '<svg><use xlink:href="#z-prev" /></svg>',
+                        '<svg><use xlink:href="#z-next" /></svg>',
+                    ],
                     items: 5,
+                    pagination: false,
                     itemsCustom: [
                         [0, 1],
                         [568, 2],
                         [768, 3],
                         [1024, 4],
-                        [1270, 5],
+                        [1270, 4],
                     ],
                     beforeMove: function() {
                         if (typeof $j.fn.lazyload != 'undefined') {
@@ -1469,7 +1474,7 @@ $j(document)
         )
         $('.mycart__content').on('click', '.mycart__close', function(event) {
             event.preventDefault()
-            if($(event.target).hasClass('mycart__close'))
+            if ($(event.target).hasClass('mycart__close'))
                 $(this)
                     .closest('.mycart')
                     .removeClass('on')

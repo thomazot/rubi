@@ -1,0 +1,128 @@
+.store-security
+    margin: -16px
+    padding: 10px
+
+.store
+    display: flex
+    align-items: stretch
+
+    &__icon
+        width: 27px
+        height: 36px
+        fill: #fff
+        margin-bottom: 20px
+
+    &__header
+        flex: 0 0 50%
+        display: flex
+        align-items: center
+        background: color1_bg
+        color: #fff
+        font-size: 8px
+        font-weight: bold
+        padding: 15px
+
+    &__title
+        font: italic regular 24px / 1 font-two
+
+    &__description
+        text-transform: uppercase
+
+    &__main
+        flex: 1
+        min-width: 0
+        overflow: hidden
+
+    &__item
+        display: flex
+        height: 50%
+
+        a
+            display: block
+            flex: 0 0 50%
+            margin: 1px
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+.security
+    margin: 20px 0
+    padding: 20px 0
+    border-top: solid 1px #ececec
+    border-bottom: solid 1px #ececec
+
+    &__text
+        display: none
+
+    &__header
+        text-align: center
+
+    &__description
+        font-size: 12px
+        font-weight: bold
+        text-transform: uppercase
+
+    &__title
+        font: italic regular 22px / 1 font-two
+        color: color2_bg
+        margin-top: -8px
+
+    .certs__list
+        display: flex
+        justify-content: space-between
+        flex-wrap: nowrap
+        margin: 20px 0 0
+
+@media (min-width: 768px)
+    .store
+        &__icon
+            width: 38px
+            height: 52px
+
+        &__header
+            flex: 0 0 30%
+            font-size: 12px
+            padding-left: 25px
+
+        &__title
+            font: italic regular 36px / 1 font-two
+
+        &__main
+            a
+                flex: 0 0 33.333%
+
+    .security
+        &__header
+            text-align: left
+
+        &__title
+            margin: 0
+            font-size: 36px
+
+        &__text
+            display: block
+            font-size: 13px
+            font-weight: regular
+            text-transform: uppercase
+            color: #666666
+            padding-top: 20px
+
+@media (min-width: 993px)
+    .store-security
+        display: flex
+        margin: 30px auto
+        width: viewport
+        max-width: 95%
+
+    .store
+        flex: 0 0 50%
+        padding-right: 40px
+
+    .security
+        border: 0
+        margin: 0
+        flex: 1
+        min-width: 0
+        padding: 0 25px

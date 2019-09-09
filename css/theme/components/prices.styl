@@ -1,0 +1,59 @@
+.price-box
+    .regular-price, .special-price, .price-to
+        margin-bottom: 0
+        padding: 0 5px
+
+        .label
+            display: none
+
+        .price
+            span
+                font-size: 13px
+                font-weight: regular
+                text-transform: uppercase
+                color: color2_bg
+
+    .old-price, .price-from
+        margin-bottom: 0
+        padding: 0 5px
+
+        .label
+            display: none
+
+        .price
+            span
+                font-size: 13px
+                font-weight: regular
+                color: #999999
+
+.preco-parcelado-sem-juros, .price-box-avista
+    display: none
+
+.preco-parcelado
+    font-size: 11px
+    font-weight: regular
+    text-transform: uppercase
+
+    .or, .de
+        span
+            color: color1_bg
+
+    > .num, > .value
+        span
+            font-weight: regular
+            color: color2_bg !important
+
+    > .juros
+        font-size: 11px
+
+        .value
+            span
+                color: #999
+                font-weight: regular
+
+            > span:first-child
+                &:before
+                    content: 'no cartão com '
+
+                &:after
+                    content: ' de juros '

@@ -1,0 +1,129 @@
+.news-social
+    margin: 0 -16px
+
+.news
+    padding: 10px
+    border-top: solid 1px #ececec
+    border-bottom: solid 1px #ececec
+
+    &__title
+        font: italic 400 22px / 1.2 font-two !important
+        margin-bottom: 0 !important
+
+    &__description
+        font-size: 11px
+        font-weight: bold
+        text-transform: uppercase
+        color: color1_bg
+
+.newsletter
+    &__text
+        text-align: center
+        margin-bottom: 0
+
+    &__form
+        display: flex
+        flex-flow: row wrap
+
+        .input-email
+            height: 30px
+            border-radius: 2px
+            font-size: 13px
+            font-weight: regular
+            line-height: 30px
+            box-shadow: none
+            border: solid 1px #ececec
+
+            &::placeholder
+                color: #cccccc
+                text-transform: uppercase
+
+    &__email
+        flex: 1
+        min-width: 0
+
+    &__submit
+        flex: 0 0 75px
+
+    &__btn
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 30px
+        padding: 0
+        border-radius: 2px
+        font-size: 10px
+        text-transform: uppercase
+
+.socials
+    display: flex
+    aling-items: center
+    padding: 20px 10px
+
+    &__title
+        margin-bottom: 0
+        margin-right: 30px
+        font: italic regular 16px / 1.2 font-two
+        color: color1_bg
+
+    &__list
+        flex: 1
+        min-width: 0
+        margin: 0
+        justify-content: space-between
+
+    img
+        max-width: 25px
+
+    .flex > *
+        padding: 0 5px
+
+@media (min-width: 768px)
+    .news
+        &__title
+            font: italic 400 35px / 1.2 font-two !important
+            letter-spacing: 8px
+
+        &__description
+            font-size: 12px
+
+    .newsletter
+        &__form
+            flex-wrap: nowrap
+
+            .input-text
+                height: 40px
+
+        &__btn
+            height: 40px
+            font-size: 12px
+
+        &__text
+            flex: 0 0 auto
+            text-align: left
+            padding-right: 20px
+
+    .socials
+        img
+            max-width: 30px
+
+        &__title
+            font: italic 400 22px / 1.2 font-two
+
+@media (min-width: 993px)
+    .news-social
+        border-top: solid 1px #ececec
+        border-bottom: solid 1px #ececec
+
+        &__container
+            display: flex
+            align-items: center
+            width: viewport
+            max-width: 95%
+            margin: 0 auto
+
+    .news
+        flex: 1
+        min-width: 0
+        border: 0
+        margin-right: 70px
