@@ -11716,6 +11716,11 @@ body {
   .categories .a--1:hover {
     box-shadow: 0 0 4px rgba(231,163,74,0.25);
   }
+  .categories .all-ul--0 {
+    width: 1200px;
+    max-width: 95%;
+    margin: 0 auto;
+  }
   .categories .all-a--0,
   .categories .all-a--1 {
     text-align: center;
