@@ -1,0 +1,117 @@
+.footer
+    max-width: 100%
+    text-align: center
+
+    .logo img
+        margin: 0 auto
+
+    &-container
+        border-top: solid 5px color2_bg
+        margin: 0 -16px
+        padding: 35px 10px 10px
+
+    &__phone
+        display: block
+        font-size: 22px
+        font-weight: regular
+        color: color2_bg
+        margin-top: 35px
+
+    &__email
+        display: block
+        margin: 15px 0
+        font-size: 13px
+        font-weight: regular
+        color: #666666
+
+    &__time
+        font-size: 13px
+        font-weight: regular
+        color: #666
+        margin-bottom: 15px
+
+    .mymenu
+        margin-bottom: 20px
+
+        .a--0
+            font-size: 13px
+            font-weight: regular
+            color: #666666
+
+        .li--0
+            margin-bottom: 3px
+
+    #footer-main-categories, #footer-helpers, #footer-myaccount
+        &:before
+            display: block
+            font-size: 14px
+            font-weight: bold
+            text-transform: uppercase
+            color: #0b0e11
+            max-width: 85px
+            margin: 0 auto 15px
+
+    #footer-main-categories
+        &:before
+            content: 'Principais Categorias'
+
+    #footer-helpers
+        &:before
+            content: 'Tire suas Dúvidas'
+
+    #footer-myaccount
+        &:before
+            content: 'Acesse sua Conta'
+
+    &__copyright
+        font-size: 13px
+        font-weight: regular
+        text-transform: uppercase
+        text-align: center
+        color: #666666
+        padding: 25px 0
+        border-top: solid 1px #f6f6f6
+
+@media (min-width: 993px)
+    .footer
+        display: grid
+        grid-template-areas: 'logo footer-main-categories footer-helpers footer-myaccount' 'contact footer-main-categories footer-helpers footer-myaccount'
+        text-align: left
+        width: viewport
+        justify-content: space-between
+        max-width: 95%
+        margin: 0 auto
+
+        &__phone
+            margin-top: 0
+
+        .logo
+            grid-area: logo
+
+            img
+                margin: 0
+                height: 65px
+
+        &__time
+            grid-area: contact
+
+        #footer-main-categories, #footer-helpers, #footer-myaccount
+            margin-top: 65px
+
+            &:before
+                margin: 0 0 15px
+
+        #footer-main-categories
+            grid-area: footer-main-categories
+
+        #footer-helpers
+            grid-area: footer-helpers
+
+        #footer-myaccount
+            grid-area: footer-myaccount
+            padding-right: 45px
+
+        &__copyright
+            width: viewport
+            max-width: 95%
+            margin: 0 auto
