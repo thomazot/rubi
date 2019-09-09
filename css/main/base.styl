@@ -64,7 +64,7 @@ a, button, input, select, textarea, .order-status:after, .order-status .ico, .os
 .wrapper
     padding: 0 1rem
 
-.wrapper > *:not(:last-child), .header-container > *:not(:last-child), .main-container > *:not(:last-child), .col-main > *:not(:last-child), .sidebar > *:not(:last-child), .footer-container > *:not(:last-child), .footer > *:not(:last-child)
+.wrapper > *:not(:last-child), .main-container > *:not(:last-child), .col-main > *:not(:last-child), .sidebar > *:not(:last-child)
     margin-bottom: 1rem
 
 .header, .main-container, .footer
@@ -1463,40 +1463,6 @@ form.searchautocomplete
     z-index: 20
     height: 2.75rem
 
-.mycart__header a
-    position: relative
-    display: flex
-    align-items: center
-    justify-content: center
-    height: 2.75rem
-    width: 2.75rem
-    box-shadow: inset 0 0 0 1px color1_bg
-    border-radius: 100%
-
-.mycart__header .ico
-    fill: color1_bg
-    width: 1rem
-    height: 1rem
-    max-height: none
-
-.mycart__header .text
-    display: none
-
-.mycart__header .qtd
-    position: absolute
-    top: 0
-    right: -0.25rem
-    width: 1rem
-    height: 1rem
-    border-radius: 100%
-    background: color1_bg_hover
-    color: color1_font_hover
-    line-height: 1rem
-    text-align: center
-    font-size: 0.7rem
-    letter-spacing: -0.1em
-    text-indent: -1.5px
-
 .mycart__content
     max-height: 80vh
     overflow: auto
@@ -1508,19 +1474,10 @@ form.searchautocomplete
     padding: 1rem
     background: #fff
     box-shadow: inset 0 1px 0 color1_bg, inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1rem 2rem - 1rem rgba(0, 0, 0, 0.5)
-    display: none
 
 .drop--left .mycart__content
     left: 0
     right: auto
-
-.drop--right .mycart__content
-    left: auto
-    right: 0
-
-.drop--top .mycart__content
-    top: 100%
-    bottom: auto
 
 .drop--bottom .mycart__content
     top: auto
@@ -1529,12 +1486,6 @@ form.searchautocomplete
 
 .mycart:hover .mycart__content
     display: block
-
-.mycart:hover .mycart__header a
-    background: color1_bg
-
-.mycart:hover .mycart__header .ico
-    fill: color1_font
 
 .mycart__list
     max-height: 50vh
@@ -1629,41 +1580,6 @@ form.searchautocomplete
     position: relative
     z-index: 20
     height: 2.75rem
-
-.myaccount__header a
-    position: relative
-    display: flex
-    align-items: center
-    justify-content: center
-    height: 2.75rem
-    width: 2.75rem
-    overflow: hidden
-    box-shadow: inset 0 0 0 1px color1_bg
-    border-radius: 100%
-
-.myaccount__header .thumb
-    position: absolute
-    top: 0
-    left: 0
-
-.myaccount__header .thumb img
-    display: block
-    width: auto
-    height: 2.75rem
-    min-width: 100%
-
-.myaccount__header .thumb:empty
-    display: none
-
-.myaccount__header .ico
-    fill: color1_bg
-    width: 2.75rem
-    height: 2.75rem
-    max-height: none
-    margin: 0
-
-.myaccount__header .name, .myaccount__header .text
-    display: none
 
 .myaccount__content
     position: absolute
@@ -2856,11 +2772,9 @@ body.ie .owl-prev:before, body.ie .owl-next:before
     flex: 1 1 auto
     margin-left: 1rem
 
-.header .mywish, .header .mycart, .header .myaccount, .header .loginout
+.header .mywish, .header .mycart, .header .myaccount
     margin-left: 1rem
 
-.header .loginout
-    text-align: right
 
 /* Footer */
 .footer-container
@@ -9403,46 +9317,6 @@ table .change-product-link:hover
         line-height: 1em
         font-size: 1rem
 
-/* ------ Meu Carrinho */
-/* ~992px */
-@media (max-width: 62rem)
-    .mycart__content
-        position: fixed
-        top: 0 !important
-        bottom: auto !important
-        left: 0 !important
-        right: auto !important
-        z-index: 999
-        max-width: none
-        width: 100vw
-        height: 100vh
-        max-height: 100vh
-        display: block
-        overflow-y: auto
-        box-shadow: inset 0 1px 0 color1_bg, inset 0 0 0 1px rgba(0, 0, 0, 0.1)
-        transform: translateX(-100%)
-        transition: 600ms cubic-bezier(0.23, 1, 0.32, 1)
-
-    .mycart.on .mycart__content
-        transform: translateX(0)
-
-    .mycart__header .ico
-        fill: color1_bg !important
-
-    .mycart__hide
-        display: block
-        margin: -1rem -1rem 1rem
-        border-radius: 0
-
-    .mycart__list
-        max-height: none
-        overflow: visible
-        padding: 0
-        margin: 0
-
-    .mycart__actions
-        margin-bottom: 1rem
-
 /* ------ Breadcrumb */
 /* ~768px */
 @media (max-width: 48rem)
@@ -9681,10 +9555,7 @@ table .change-product-link:hover
     .header
         flex: 1 1 auto
 
-    .header-container .loginout
-        display: none
-
-    .header-container .mywish__header a, .header-container .mycart__header a, .header-container .myaccount__header a
+    .header-container .mywish__header a, .header-container .myaccount__header a
         background: color1_font !important
         box-shadow: none
 
@@ -9699,66 +9570,18 @@ table .change-product-link:hover
         padding: 0.125rem 0 0.125rem 1rem
         margin: 0 !important
 
-    .header .search
-        flex: 0 0 auto
-        margin-left: auto
-        z-index: 20
-
-    .header .search__button
-        box-shadow: none
-
-    .header .search__form .input-box
-        display: none
-
-    .header .search.on .search__form .input-box
-        position: fixed
-        top: 0
-        left: 0
-        z-index: 999
-        display: block
-        width: 100vw
-
-    .header .search.on .search__input
-        height: 3rem
-        width: 100%
-        padding: 1rem 3.75rem 1rem 1rem
-        background: color1_bg
-        color: color1_font
-        box-shadow: none
-
-    .header .search.on .search__input::-webkit-input-placeholder
-        color: color1_font
-
-    .header .search.on .search__input::-moz-placeholder
-        color: color1_font
-
-    .header .search.on .search__input:-ms-input-placeholder
-        color: color1_font
-
-    .header .search.on .search__input:-moz-placeholder
-        color: color1_font
-
-    .header .search__hide
-        position: fixed
-        top: 0.125rem
-        right: 0.125rem
-        z-index: 9999
-        box-shadow: none
-        background: none
-        display: block
-
     .header .logo img, .header .logo svg
         max-height: 2rem
         height: auto
 
-    .header .myaccount, .header .mycart
+    .header .myaccount
         margin-left: 0
         z-index: 10
 
-    .header .myaccount__header, .header .mycart__header
+    .header .myaccount__header
         padding: 0.375rem
 
-    .header .myaccount__header a, .header .mycart__header a
+    .header .myaccount__header a
         width: 2rem
         height: 2rem
 

@@ -1,4 +1,19 @@
 .logo
     .header &
+        flex: 1
+        min-width: 0
+
         img, svg
             height: 48px
+            margin: 0 auto
+
+@media (min-width: 993px)
+    .logo
+        .header &
+            flex: 0 0 auto
+
+            img, svg
+                height: 66px
+
+                .scrolling &
+                    height: 48px

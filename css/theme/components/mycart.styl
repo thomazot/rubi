@@ -1,0 +1,321 @@
+.mycart
+    position: static
+    height: auto
+    margin-left: 0
+    margin-right: 10px
+
+    .item-options
+        display: grid
+        grid-template-columns: auto 1fr
+
+        dt, dd
+            font-size: 11px
+            font-weight: regular
+            text-transform: uppercase
+            color: #999999
+            margin: 0
+
+        dt
+            flex: 0 0 auto
+
+            &:after
+                content: ': '
+
+        dd
+            flex: 1 1 auto
+            min-width: 0
+            margin-left: 3px
+
+    &__name
+        order: 1
+        margin: 0
+
+        a
+            font-size: 11px
+            font-weight: regular
+            text-transform: uppercase
+            color: #666666
+
+    .mycart > &__header
+        position: relative
+
+        &:before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 2
+            width: 100%
+            height: 100%
+            background: rgba(0, 0, 0, 0)
+
+        .mycart
+            &__link
+                position: relative
+                display: flex
+                justify-content: center
+                align-items: center
+                height: 50px
+                padding-right: 12px
+
+            &__icon
+                width: 25px
+                height: 30px
+                fill: color1_bg
+                opacity: 0.1
+
+            &__label
+                display: none
+                font-size: 13px
+                font-weight: bold
+                text-transform: uppercase
+                margin-left: 10px
+
+            &__quantity
+                position: absolute
+                top: 10px
+                right: 0
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 16px
+                height: 16px
+                border-radius: 50%
+                font-size: 9px
+                font-weight: regular
+                background: color1_bg
+                color: #fff
+
+    &__content
+        position: fixed
+        top: 0
+        left: auto
+        right: 0
+        height: 100%
+        max-height: none
+        transform: translateX(100%)
+        opacity: 0
+        visibility: hidden
+        transition: 600ms cubic-bezier(0.23, 1, 0.32, 1)
+        width: 100%
+        max-width: 100%
+        border-left: solid 1px #ececec
+        box-shadow: 10px 0 20px rgba(#464646, 15%)
+
+        > .title
+            display: none
+
+        .on &
+            transform: translateX(0)
+            opacity: 1
+            visibility: visible
+
+        .mycart
+            &__header
+                display: flex
+                align-itemx: center
+                padding: 20px
+                margin: -16px -16px 0
+                border-bottom: solid 1px #f7f7f7
+                margin-bottom: 20px
+
+            &__link
+                flex: 1
+                min-width: 0
+                display: flex
+                align-items: center
+
+            &__icon
+                order: 1
+                width: 25px
+                height: 30px
+                fill: color1_bg
+                opacity: 0.1
+
+            &__label
+                order: 3
+                font-size: 13px
+                font-weight: bold
+                text-transform: uppercase
+                color: color1_bg
+
+            &__quantity
+                order: 2
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 30px
+                height: 30px
+                border-radius: 50%
+                font-size: 13px
+                font-weight: regular
+                background: color1_bg
+                color: #fff
+                margin: 0 5px
+
+            &__close
+                position: relative
+                display: flex
+                justify-content: flex-end
+                align-items: center
+                width: 50px
+                height: 50px
+                padding: 0
+                background: none
+                box-shadow: none
+
+                &:before
+                    content: ''
+                    background: rgba(0, 0, 0, 0)
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+
+                svg
+                    width: 8px
+                    height: 15px
+                    fill: color1_bg
+                    opacity: 1
+
+    &__remove
+        display: none
+
+    &__qtd
+        display: none
+        position: absolute
+        left: calc(100% - 140px)
+        top: 50%
+        transform: translateY(-50%)
+        font-size: 13px
+        font-weight: regular
+        color: color1_bg
+        opacity: 1
+        border: solid 1px #ececec
+        border-radius: 3px
+        width: 40px
+        height: 40px
+        text-align: center
+        line-height: 40px
+
+        .label
+            display: none
+
+    &__item
+        position: relative
+        border-bottom: 0
+        padding: 0
+        margin: 0
+
+        + .mycart__item
+            border-top: solid 1px #f7f7f7
+            padding-top: 20px
+            margin-top: 20px
+
+            &:before
+                content: '+'
+                position: absolute
+                top: -13px
+                right: 0
+                color: color2_bg
+                font-size: 20px
+                font-weight: bold
+
+    &__thumb
+        max-width: 60px
+
+    &__details
+        position: relative
+        display: flex
+        flex-flow: column nowrap
+
+        .truncated
+            order: 2
+
+        .price
+            order: 3
+            font-size: 11px
+            font-weight: regular
+            color: color2_bg
+            margin-top: 10px
+
+    &__totals
+        display: flex
+        justify-content: space-between
+        align-items: center
+        background: #eef8ee
+        border-radius: 3px
+        padding: 15px 20px
+        margin-top: 20px
+
+        .price-box-avista, .price-box-parcelado, .regular-price .label
+            display: none
+
+        .title, .regular-price .price
+            font-size: 13px
+            font-weight: bold
+            text-transform: uppercase
+            color: #5cb85c
+
+        .title
+            margin: 0
+
+            &:before
+                content: 'Total'
+
+            span
+                display: none
+
+    &__actions
+        margin: 20px 0 0
+        border-top: dotted 1px #cccccc
+
+        .editar
+            display: none
+
+        .finalizar
+            display: flex
+            justify-content: center
+            align-items: center
+            height: 40px
+            padding: 0
+            margin-top: 20px
+            border-radius: 3px
+            font-size: 13px
+            font-weight: regular
+            text-transform: uppercase
+            text-align: center
+            background: color-call-to-action
+            color: #fff
+
+            &:hover
+                background: darken(color-call-to-action, 20%)
+
+@media (min-width: 993px)
+    .mycart
+        &__content
+            max-width: 446px
+
+        &__qtd
+            display: block
+
+        &__details
+            .price
+                position: absolute
+                right: 0
+                top: 50%
+                margin: 0
+                transform: translateY(-50%)
+
+        .mycart &__header
+            .mycart
+                &__quantity
+                    position: static
+                    width: 30px
+                    height: 30px
+                    font-size: 13px
+                    margin-left: 20px
+
+                &__label
+                    display: block

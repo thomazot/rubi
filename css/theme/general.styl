@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap')
 
+font = unquote("'Roboto', sans-serif")
+font-two = unquote("'Playfair Display', serif")
+color-call-to-action = #5cb85c
 /**
  * Mixins
  */
@@ -13,7 +17,7 @@ bold = 700
 /**
  * Mixin - Viewport
  */
-viewport = 1160px
+viewport = 1200px
 /**
  * Mixin - Responsive
  * @media (max-width screen-sm-min)
@@ -40,12 +44,18 @@ screen-lg = 1200px
     margin: 0 auto
     width: auto
 
+.wrapper-container
+    padding-top: 92px
+
+    @media (min-width: 993px)
+        padding-top: 157px
+
 /*
  * Base
  * Estilo base do elementos do Html
  */
 body
-    font-family: 'Exo 2', sans-serif
+    font-family: font
 
 /*
  * Components
@@ -89,3 +99,8 @@ body
  */
 @import 'components/logo'
 @import 'components/categories'
+@import 'components/header'
+@import 'components/mycart'
+@import 'components/loginout'
+@import 'components/search'
+@import 'components/myaccount'

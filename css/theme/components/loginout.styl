@@ -1,0 +1,39 @@
+.loginout
+    display: none
+    align-items: center
+    font-size: 13px
+    font-weight: regular
+    text-transform: uppercase
+    line-height: 50px
+    color: color1_bg
+
+    a
+        display: inline-block
+        line-height: 50px
+
+        &:first-child
+            color: color2_bg
+            margin-right: 3px
+
+        &:last-child
+            margin-left: 3px
+
+    .categories &
+        position: absolute
+        right: 0
+        top: 0
+        display: block
+        color: #fff
+        margin-right: 10px
+        line-height: 55px
+
+        a
+            line-height: 55px
+
+            &:last-child
+                color: #fff
+
+@media (min-width: 993px)
+    .loginout
+        .categories &
+            display: none
