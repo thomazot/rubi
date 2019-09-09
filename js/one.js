@@ -688,10 +688,10 @@
         fix_catalog_flexbox: true,
         // responsive
         m_categories: true,
-        m_search: true,
+        m_search: false,
         m_filters: true,
         m_myaccount: true,
-        m_mycart: true,
+        m_mycart: false,
         m_parcelamento: true,
         m_frete: true,
         m_produto: true,
@@ -1328,10 +1328,10 @@ $j.fn.neonTheme.custom = {
     fix_catalog_flexbox: true, // adiciona elementos para arrumar o flexbox do catálogo
     /* - Responsivo */
     m_categories: true, // ativa o responsivo do Menu de Categorias
-    m_search: true, // ativa o responsivo da Busca
+    m_search: false, // ativa o responsivo da Busca
     m_filters: true, // ativa o responsivo dos Filtros do Catálogo
     m_myaccount: true, // ativa o responsivo da Minha Conta
-    m_mycart: true, // ativa o responsivo do Meu Carrinho
+    m_mycart: false, // ativa o responsivo do Meu Carrinho
     m_parcelamento: true, // ativa o responsivo do parcelamento na página de produto
     m_frete: true, // ativa o responsivo do cálculo de frete na página do produto
     m_produto: true, // ativa o responsivo de cada bloco da página de produto
@@ -1415,15 +1415,67 @@ Para cada SVG adicionado, adicione um objeto com os parametros:
  * 'scrollStop'
  * 'ajaxComplete'
  */
+function scrollTop() {
+    var currentScrolling = 0
+
+    $j(window).scroll(function() {
+        var body = $j('body')
+        var scrollTop = $j(window).scrollTop()
+        var heightHeader = $j('.header-container').outerHeight()
+
+        if (scrollTop > 0) body.addClass('scrolling')
+        else body.removeClass('scrolling')
+
+        if (scrollTop > heightHeader) {
+            if (scrollTop > currentScrolling) {
+                body.addClass('scrolling--down').removeClass('scrolling--up')
+            } else {
+                body.addClass('scrolling--up').removeClass('scrolling--down')
+            }
+            currentScrolling = scrollTop
+        } else {
+            body.removeClass('scrolling--up').removeClass('scrolling--down')
+        }
+    })
+}
 
 $j(document)
     .ready(function($) {
+        // Scrolling
+        scrollTop()
+
         // document.ready
         $('.categories .parent').click(function(event) {
             if ($(event.target).hasClass('parent')) {
                 $(event.target).toggleClass('on')
             }
         })
+
+        // mycart
+        $('.mycart__header').click(function(event) {
+            event.preventDefault()
+            if ($(event.target).hasClass('mycart__header')) {
+                $(event.target)
+                    .closest('.mycart')
+                    .toggleClass('on')
+            }
+        })
+        $('.mycart__content').prepend(
+            $('.mycart__header')
+                .clone()
+                .append(
+                    '<button type="button" class="mycart__close"><svg width="8" height="15" class="mycart__icon"><use xlink:href="#z-next"></use></svg></button>'
+                )
+        )
+        $('.mycart__content').on('click', '.mycart__close', function(event) {
+            event.preventDefault()
+            if($(event.target).hasClass('mycart__close'))
+                $(this)
+                    .closest('.mycart')
+                    .removeClass('on')
+        })
+        // menu
+        $('.categories').prepend($('.loginout').clone())
     })
     .on('resizeStop', function(e) {
         // Safe window.resize

@@ -21,28 +21,6 @@ var processors = [
         grid: true,
         cascade: false,
     }),
-    pxtorem({
-        rootValue: rootValue,
-        unitPrecision: unitPrecision,
-        propList: [
-            'font',
-            'font-size',
-            'line-height',
-            'letter-spacing',
-            'width',
-            'height',
-            'margin',
-            'margin*',
-            'padding*',
-            'top',
-            'right',
-            'bottom',
-            'left',
-        ],
-        mediaQuery: false,
-        minPixelValue: 0,
-        replace: true,
-    }),
 ]
 
 function loadbrowserSync() {
