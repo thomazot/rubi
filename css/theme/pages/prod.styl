@@ -1,0 +1,347 @@
+.prod
+    &__name
+        h1
+            font-size: 18px
+            font-weight: regular
+            text-transform: uppercase
+            color: color1_bg
+
+        .sku, .product-rate .to-rate
+            font-size: 10px
+            font-weight: regular
+            line-height: 16px
+            color: #666
+            text-transform: uppercase
+
+        .product-rate
+            display: none
+
+    &__shop
+        .qty-wrapper
+            display: none
+
+        .add-to-cart-btn
+            display: flex
+            justify-content: center
+            align-items: center
+            height: 48px
+            padding: 0
+            font-size: 18px
+            font-weight: semibold
+            text-transform: uppercase
+            background: color-call-to-action
+            width: 100%
+            min-width: 195px
+            line-height: 48px
+
+            &:hover
+                background: rgba(color-call-to-action, 20%)
+
+        .regular-price, .special-price
+            padding: 0
+
+            .label
+                display: inline-block
+
+            .label, .price
+                span
+                    display: inline-block
+                    font-size: 18px
+                    font-weight: medium
+                    color: color2_bg
+
+        .old-price
+            .label
+                display: inline-block
+
+            .label, .price
+                span
+                    display: inline-block
+                    font-size: 13px
+                    font-weight: regular
+                    color: #999999
+
+        .preco-parcelado
+            font-size: 13px
+            color: #666
+
+            .or, .num, .de, .value, .juros
+                span
+                    color: #666 !important
+
+        .price-box-avista
+            position: relative
+            display: block
+            padding-left: 40px
+            min-height: 25px
+
+            &:before
+                content: ''
+                position: absolute
+                top: 50%
+                left: 0
+                display: inline-block
+                width: 30px
+                height: 25px
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyMCI+PHRpdGxlPnotdGlja2V0PC90aXRsZT48ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiPjxnIGlkPSJDYW1hZGFfMS0yIiBkYXRhLW5hbWU9IkNhbWFkYSAxIj48cGF0aCBkPSJNMy44NCwzaC0xVjE3aDFaTTIxLjEyLDNoLTFWMTdoMVpNNi43MiwzaC0xVjEzaDFaTTE4LjI0LDNoLTFWMTNoMVpNMTIuNDgsM2gtMVYxN2gxWk05LjYsM2gtMVYxM2gxWm01Ljc2LDBoLTFWMTNoMVpNOS42LDE0aC0xdjNoMVptLTMsMGgtMXYzaDFabTguOCwwaC0xdjNoMVptMiwzaDFWMTRoLTFaTTAsMFYyMEgyNFYwWk0yMywxOUgxVjFIMjNaIi8+PC9nPjwvZz48L3N2Zz4=')
+                opacity: 0.5
+                transform: translateY(-50%)
+
+            .label
+                font-size: 13px
+                font-weight: regular
+                text-transform: uppercase
+                color: #666
+                line-height: 1
+
+            .price
+                display: block
+                font-size: 14px
+                font-weight: bold
+                text-transform: uppercase
+                color: color2_bg
+                line-height: 1
+
+    &__prices-actions
+        padding: 30px 0
+
+    &__number
+        display: block
+        font-size: 12px
+        font-weight: regular
+        text-transform: uppercase
+        text-align: center
+        border: solid 1px #ececec
+        padding: 10px
+
+        span
+            display: block
+            color: color2_bg
+
+.product-image-gallery
+    box-shadow: none
+
+.more-views
+    display: none
+
+.configurable:before, .options:before
+    display: none
+
+.configurable__caption, .options__caption
+    font-size: 12px
+    font-weight: semibold
+    text-transform: uppercase
+    color: #666
+    opacity: 1
+
+.product-collateral
+    .reviews
+        display: none
+
+.product-rubi, .product-perfect
+    background: #f9f9f9
+    margin: 0 -16px 0
+    padding: 0 10px 50px
+    font-size: 11px
+    font-weight: regular
+    line-height: 1.3
+    color: #333
+
+    &__title
+        font: italic regular 18px / 1.5 font-two
+
+.prod__attr
+    margin: 40px -16px
+    padding: 0 10px
+
+    &-image
+        display: none
+
+    &-title
+        font: italic regular 18px / 1.5 font-two
+
+    &-obs
+        font-size: 11px
+        font-weight: regular
+        text-transform: uppercase
+        color: #666
+        padding: 5px 0
+
+        &:before
+            content: '* '
+            color: color2_bg
+
+    table tbody td:first-child, table tbody td:last-child
+        border: 0
+
+    table
+        border-bottom: solid 1px #ececec !important
+
+    td
+        border-top: solid 1px #ececec !important
+        padding: 10px 0
+        font-size: 11px
+        font-weight: regular
+        color: #666666
+        text-transform: uppercase
+
+        &:first-child
+            width: 80%
+
+.product-perfect
+    display: flex
+    flex-flow: column nowrap
+    padding: 30px 10px
+    overflow: hidden
+
+    &__img
+        order: -1
+        max-width: 128px
+        margin-left: -40px
+
+@media (min-width: 993px)
+    .configurable__option, .options__option
+        min-width: 0
+
+    .product-options
+        display: flex
+        justify-content: space-between
+        flex-flow: row wrap
+        margin: 0
+
+        > div
+            flex: 0 0 50%
+            max-width: 50%
+            padding: 20px 0
+
+            &:first-child
+                padding-right: 20px
+
+            &.options
+                padding-left: 20px
+
+    .prod
+        &__name
+            display: flex
+            flex-flow: row wrap
+            justify-content: space-between
+
+            h1
+                flex: 0 0 100%
+                padding-bottom: 10px
+                margin-bottom: 10px
+                border-bottom: solid 1px #ececec
+
+            .product-rate
+                display: flex
+
+        &__img
+            flex: 0 0 50%
+
+        &__prices-actions
+            display: flex
+            justify-content: space-between
+            align-items: center
+
+        &__shop
+            .col
+                flex: 1
+                min-width: 0
+
+    .product-rubi
+        position: relative
+        display: flex
+        flex-flow: column nowrap
+        justify-content: center
+        align-items: flex-start
+        padding-right: 50%
+        min-height: 450px
+        font-size: 13px
+        overflow: hidden
+        box-shadow: 800px 0 0 #f9f9f9, -800px 0 0 #f9f9f9
+
+        &__title
+            font-size: 26px
+
+        &__img
+            position: absolute
+            right: 0
+            max-width: 45%
+
+    .product-perfect
+        font-size: 13px
+        flex-flow: row nowrap
+        align-items: center
+        box-shadow: 800px 0 0 #f9f9f9, -800px 0 0 #f9f9f9
+
+        &__title
+            font-size: 26px
+
+        &__main
+            flex: 0 0 50%
+            min-width: 0
+            order: -2
+
+        &__img
+            flex: 0 0 50%
+            margin: 0
+            max-width: none
+
+            img
+                display: block
+                max-width: 90%
+                margin: 0 auto
+
+    .prod__attr
+        display: flex
+        align-items: center
+
+        &-image
+            flex: 0 0 50%
+            display: block
+
+        &-table
+            display: flex
+            flex-flow: column nowrap
+            justify-content: center
+            flex: 1
+            min-width: 0
+
+        &-img
+            order: 10
+            padding-top: 30px
+            text-align: center
+
+    .reviews
+        .product-collateral &
+            display: block
+
+        &__title
+            font: italic regular 32px / 1.5 font-two
+            text-align: center
+
+        &__resume, &__ratings, &__add
+            box-shadow: none
+
+        .subtitle
+            font-size: 14px
+            font-weight: bold
+            text-transform: uppercase
+            color: color1_bg
+
+        &__add
+            .title
+                font-size: 13px
+                font-weight: regular
+
+                span
+                    display: block
+                    text-transform: uppercase
+                    color: color2_bg
+
+            input, textarea
+                box-shadow: none
+
+    .product-options
+        border-top: solid 1px #ececec
+        margin: 0

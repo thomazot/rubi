@@ -1,0 +1,39 @@
+{{widget type="banner/widget_banner" template="banner/banner.phtml" banner="regua-de-vantagens"}}
+{{widget type="interface/widget_scripts" template="interface/widgets/scripts.phtml" script_id="produto-rubi"}}
+
+<div class="prod__attr">
+    <div class="prod__attr-image">
+        <img src="/media/interface/images/prod-attr-images.jpg" />
+    </div>
+    <div class="prod__attr-table">
+        <div class="prod__attr-img">
+            <img src="/media/interface/images/prod-attr.jpg" />
+        </div>
+        <div class="prod__attr-title">Dimensões</div>
+        <table celspacing="0" celpadding="0">
+            @if(largura_anel)
+            <tr>
+                <td>Largura</td>
+                <td>@atributo(largura_anel)</td>
+            </tr>
+            @endif(largura_anel) @if(espessura_anel)
+            <tr>
+                <td>Espessura</td>
+                <td>@atributo(espessura_anel)</td>
+            </tr>
+            @endif(espessura_anel) @if(peso_anel)
+            <tr>
+                <td>Peso</td>
+                <td>@atributo(peso_anel)</td>
+            </tr>
+            @endif(peso_anel)
+        </table>
+
+        <div class="prod__attr-obs">
+            Medidas aproximadas
+        </div>
+    </div>
+</div>
+{{widget type="interface/widget_scripts" template="interface/widgets/scripts.phtml" script_id="produto-combinacao-perfeita"}}
+<div class="carrossel">@quemviu</div>
+@avaliacoes(form)

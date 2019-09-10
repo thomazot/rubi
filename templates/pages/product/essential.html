@@ -1,0 +1,34 @@
+<div class="prod__img">
+    @fotos @selos
+</div>
+<div class="prod__shop">
+    <div class="col">
+        <div class="prod__name">
+            <h1>@nome</h1>
+            <small class="sku">Código do produto: @atributo(sku)</small>
+            @avaliacoes
+        </div>
+
+        @if(is_disponivel)
+        <div class="prod__prices-actions">
+            <div class="prod__prices">
+                @preco @preco(parcelado) @preco(avista) @brinde
+                @programa-fidelidade(Compre e Ganhe)
+            </div>
+            <div class="prod__call-to-action">
+                @bt(comprar)
+            </div>
+        </div>
+        @else(is_disponivel)
+        <div class="prod__esgotado">
+            <div class="title title--sm">Produto Esgotado</div>
+            @alertas
+        </div>
+        @endif(is_disponivel) @variacoes @bt(sobconsulta "Sob Consulta")
+        @temporizador
+        <a href="" class="prod__number"
+            >Não sabe o número do seu aro?
+            <span>Clique aqui que vamos te ajudar!</span></a
+        >
+    </div>
+</div>
