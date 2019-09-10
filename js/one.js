@@ -684,7 +684,7 @@
         fix_IE_SVGs: true,
         fix_zoomHeader: true,
         fix_address_phone: true,
-        fix_category_description: true,
+        fix_category_description: false,
         fix_catalog_flexbox: true,
         // responsive
         m_categories: true,
@@ -1329,7 +1329,7 @@ $j.fn.neonTheme.custom = {
     fix_IE_SVGs: true, // corrige as dimensões de SVGs inline no IE
     fix_zoomHeader: true, // corrige o z-index do .header e do zoom dos produtos no :hover de cada um
     fix_address_phone: true, // corrige a exibição do ícone de telefone nas listagens de endereços
-    fix_category_description: true, // troca a posição padrão da descrição da categoria
+    fix_category_description: false, // troca a posição padrão da descrição da categoria
     fix_catalog_flexbox: true, // adiciona elementos para arrumar o flexbox do catálogo
     /* - Responsivo */
     m_categories: true, // ativa o responsivo do Menu de Categorias
@@ -1481,6 +1481,43 @@ $j(document)
         })
         // menu
         $('.categories').prepend($('.loginout').clone())
+
+        // Catalog
+        if ($('.catalog-category-view .header-container').length) {
+            var categoryHeader = $('<div class="category-header"></div>')
+            var categoryHeaderContainer = $(
+                '<div class="category-header__container"></div>'
+            )
+            var categoryHeaderDescription = $(
+                '<div class="category-header__description"></div>'
+            )
+
+            $('.catalog-category-view .header-container').after(categoryHeader)
+
+            categoryHeaderDescription.prepend($('.category-title'))
+            categoryHeaderDescription.append($('.category-description'))
+            categoryHeaderContainer.append($('.category-image'))
+            categoryHeaderContainer.append(categoryHeaderDescription)
+            categoryHeader.append(categoryHeaderContainer)
+
+            // Filter 
+            var selectOrder = $('.col-main > .toolbar .sort-by select option')
+            if(selectOrder.length) {
+                var order = $('<div class="category-order"></div>')
+                var orderContainer = $('<div class="category-order__container"></div>')
+
+                selectOrder.each(function(){
+                    var val = $(this).val()
+                    var text = $(this).text()
+
+                    orderContainer.append('<a href="'+val+'">'+text+'</a>')
+                })
+
+                order.append(orderContainer)
+
+                $('.main-container').before(order)
+            }
+        }
     })
     .on('resizeStop', function(e) {
         // Safe window.resize
