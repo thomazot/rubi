@@ -155,6 +155,14 @@
                     selector: '.toolbar .view-mode .list',
                     mode: 'html',
                 },
+                'z-cupom': {
+                    selector: '.cart__boxes .coupon .title',
+                    mode: 'prepend',
+                },
+                'z-close': {
+                    selector: '.cart-table .btn-empty',
+                    mode: 'prepend',
+                },
             }
             $j(document).ready(function() {
                 addSVG(svgs)
@@ -1444,6 +1452,25 @@ function scrollTop() {
     })
 }
 
+function productBreadcrumb() {
+    var viewport = Math.max(
+        document.documentElement.clientWidth,
+        window.innerWidth || 0
+    )
+
+    console.log(viewport)
+
+    if ($j('.catalog-product-view').length) {
+        var breadcrumb = $j('.breadcrumb')
+
+        if (viewport >= 993) {
+            $j('.prod__shop .col').prepend(breadcrumb)
+        } else {
+            $j('.main-container').prepend(breadcrumb)
+        }
+    }
+}
+
 $j(document)
     .ready(function($) {
         // Scrolling
@@ -1500,28 +1527,30 @@ $j(document)
             categoryHeaderContainer.append(categoryHeaderDescription)
             categoryHeader.append(categoryHeaderContainer)
 
-            // Filter 
-            var selectOrder = $('.col-main > .toolbar .sort-by select option')
-            if(selectOrder.length) {
-                var order = $('<div class="category-order"></div>')
-                var orderContainer = $('<div class="category-order__container"></div>')
-
-                selectOrder.each(function(){
-                    var val = $(this).val()
-                    var text = $(this).text()
-
-                    orderContainer.append('<a href="'+val+'">'+text+'</a>')
-                })
-
-                order.append(orderContainer)
-
-                $('.main-container').before(order)
-            }
+            // Filter
+            var contentHtml = $(
+                '<div class="filters__content" style="display:none">'
+            )
+            $('.filters').after(contentHtml)
+            $('.filters__filter').click(function() {
+                var content = $('ul, ol', this).clone()
+                contentHtml.html(content).slideDown()
+            })
         }
+        // Cart
+        $('.cart__boxes .coupon .title').click(function() {
+            $(this)
+                .closest('.coupon')
+                .toggleClass('on')
+        })
+
+        productBreadcrumb()
     })
     .on('resizeStop', function(e) {
         // Safe window.resize
         // Dispara apÃ³s o Ãºltimo movimento de resize parar no navegador.
+
+        productBreadcrumb()
     })
     .on('scrollStop', function(e) {
         // Safe window.scroll

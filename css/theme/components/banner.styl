@@ -27,16 +27,22 @@
 
         &__item
             width: 100%
-            padding: 5px 0
+            padding: 0
 
 @media (min-width: 993px)
     [id*=banner__home-banner-vitrine-]
         .banner
             &__wrapper
-                padding: 25px 0
+                display: flex
+                padding: 10px 0
 
             &__item
-                padding: 25px 0
+                width: auto
+                padding: 0
+
+    .banner
+        + .products
+            margin-top: 50px
 
 #banner__home-banner-vitrine-01
     margin-top: 0

@@ -1,0 +1,214 @@
+.cart
+    .page-title
+        font: italic regular 32px / 1.5 font-two
+        text-align: center
+        color: color1_bg
+
+    &-price
+        font-size: 13px
+        font-weight: regular
+        color: color2_bg
+
+    &-product-line
+        border: 0
+
+        + .cart-product-line
+            border-top: solid 1px #f9f9f9
+            position: relative
+
+            &:after
+                content: '+'
+                position: absolute
+                top: -15px
+                right: 0
+                font-size: 26px
+                font-weight: bold
+                color: color2_bg
+
+    &-table
+        margin: 0
+
+        > header
+            display: none
+
+        main
+            border: 0
+
+        .btn-empty
+            font-size: 13px
+            font-weight: regular
+            text-transform: uppercase
+            color: #666
+            border: solid 1px #ececec
+            border-radius: 3px
+            margin: 15px 0
+            display: flex
+            justify-content: center
+            align-items: center
+
+            svg
+                width: 12px
+                height: 12px
+                fill: color2_bg
+                margin-right: 5px
+                margin-top: -2px
+
+            &:after
+                content: 'Limpar Sacola'
+
+            span
+                display: none
+
+        h2.name a
+            font-size: 13px
+            font-weight: regular
+            text-transform: uppercase
+            color: #666666
+
+        .item-options
+            background: none
+            padding: 0
+            display: grid
+            grid-template-columns: auto 1fr
+
+            dt
+                margin-right: 3px
+
+                &:after
+                    content: ': '
+
+            dt, dd
+                font-size: 12px
+                font-weight: regular
+                text-transform: uppercase
+                color: #999
+
+            dd:not(:last-child)
+                margin-bottom: 0
+
+        .qty-wrapper
+            input
+                box-shadow: none
+                border-radius: 2px
+                font-size: 13px
+                font-weight: regular
+
+            .bt-box
+                position: static
+                box-shadow: none
+                border-radius: 0
+                transform: none
+
+            .plus, .less
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                width: 20px
+                height: 20px
+                border-radius: 50%
+                display: flex
+                justify-content: center
+                align-items: center
+                line-height: 20px
+                font-size: 14px
+                font-weight: regular
+                background: color1_bg
+
+                &:before
+                    display: none
+
+                span
+                    display: block
+
+            .plus
+                right: -10px
+
+            .less
+                left: -10px
+
+    &__boxes
+        display: block
+        margin: 0
+
+        .shipping
+            display: none
+
+        .totals
+            padding: 0 16px
+            margin: 5px 0
+            box-shadow: none
+
+            .title
+                display: none
+
+            &__table
+                tbody
+                    display: none
+
+                tfoot
+                    background: #eef8ee
+                    border-radius: 3px
+
+                    td
+                        color: color-call-to-action
+                        font-size: 14px
+                        text-transform: uppercase
+                        padding: 16px
+
+                        strong
+                            font-weight: regular
+
+                        &:first-child
+                            &:before
+                                content: 'Total'
+
+                            strong
+                                display: none
+
+        .coupon
+            padding: 0
+            box-shadow: none
+            margin: 5px 0 0
+
+            &__form
+                display: none
+                padding-bottom: 10px
+
+            &.on .coupon__form
+                display: flex
+
+            .title
+                display: flex
+                align-items: center
+                color: color1_bg
+                font-size: 14px
+                font-weight: regular
+                text-transform: uppercase
+                background: #fae8e9
+                border-radius: 3px
+                padding: 16px
+                justify-content: space-between
+                margin-bottom: 10px
+
+                span
+                    flex: 1
+                    min-width: 0
+                    padding-left: 10px
+
+                &:after
+                    content: 'Adiconar'
+
+    &__links
+        justify-content: flex-end
+        margin-top: 10px
+
+        .btn-checkout
+            background: color-call-to-action
+            box-shadow: none
+            height: 40px
+            padding: 0 20px
+            width: 100%
+            font-size: 13px
+            font-weight: 400
+            text-transform: uppercase
+            text-align: right
