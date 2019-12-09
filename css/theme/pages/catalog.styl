@@ -3,7 +3,16 @@
 
 .catalog-category-view
     .sidebar
-        display: none
+        max-width: none
+        width: 100%
+        padding: 0
+        display: block
+        position: static
+        top: 0
+        left: 0
+
+    .main
+        display: block
 
 .col-main
     > .category-image, > .category-description
@@ -115,6 +124,65 @@
                 background: color1_bg
                 color: #fff
 
+.filters
+    border-top: solid 1px #ececec
+    border-bottom: solid 1px #ececec
+    padding: 0
+    margin: 30px 0
+
+    &__content
+        display: block !important
+
+    .title
+        display: none
+
+    &__name
+        margin: 0
+        font-size: 13px
+        font-weight: regular
+        text-transform: uppercase
+        color: #666666
+        padding: 0 15px
+
+    &__filter
+        box-shadow: none
+        padding: 0
+        margin: 10px 0 !important
+
+        + .filters__filter
+            border-left: solid 1px #999
+
+        &:hover
+            box-shadow: none
+
+    &__filtered
+        display: none
+
+    &__content
+        padding-bottom: 30px
+        margin-bottom: 50px
+
+        ul, ol
+            display: flex
+            justify-content: center
+            align-items: center
+
+        a
+            font-size: 13px
+            font-weight: 400
+            color: #666
+            display: inline-block
+            padding: 5px
+
+    &__list
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        margin: 20px 0
+
+        ol, ul
+            display: none
+
 @media (min-width: 768px)
     .category-menu-top
         &__icons
@@ -125,71 +193,6 @@
             justify-content: space-between
 
 @media (min-width: 993px)
-    .catalog-category-view
-        .sidebar
-            display: block
-            max-width: none
-            width: 100%
-            padding: 0
-
-        .main
-            display: block
-
-    .filters
-        border-top: solid 1px #ececec
-        border-bottom: solid 1px #ececec
-        padding: 0
-        margin: 30px 0
-
-        .title
-            display: none
-
-        &__name
-            margin: 0
-            font-size: 13px
-            font-weight: regular
-            text-transform: uppercase
-            color: #666666
-            padding: 0 15px
-
-        &__filter
-            box-shadow: none
-            padding: 0
-            margin: 30px 0 !important
-
-            + .filters__filter
-                border-left: solid 1px #999
-
-            &:hover
-                box-shadow: none
-
-        &__filtered
-            display: none
-
-        &__content
-            padding-bottom: 30px
-            margin-bottom: 50px
-
-            ul, ol
-                display: flex
-                justify-content: center
-                align-items: center
-
-            a
-                font-size: 13px
-                font-weight: 400
-                color: #666
-                display: inline-block
-                padding: 5px
-
-        &__list
-            display: flex
-            justify-content: center
-            flex-wrap: wrap
-
-            ol, ul
-                display: none
-
     .category-menu-top
         &__container
             width: viewport
